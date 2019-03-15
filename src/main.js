@@ -26,6 +26,7 @@ function paintSettings () {
 }
 
 function paintMap() {
+	docBody = '';
 	doctitle = document.getElementById('text-input-id-11').value;
 	docContent = document.getElementById('text-input-id-12').value;
 	docBody = '<link rel="stylesheet" href="https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css" crossorigin="anonymous"><div class="ef-card--content">';
