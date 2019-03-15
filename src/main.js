@@ -28,9 +28,15 @@ function paintSettings () {
 function paintMap() {
 	doctitle = document.getElementById('text-input-id-11').value;
 	docContent = document.getElementById('text-input-id-12').value;
-	sdk.setContent(docContent);
+	docBody = '<link rel="stylesheet" href="https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css" crossorigin="anonymous"><div class="ef-card--content">';
+	docBody += '<div class="ef-card--content__inner"><div class="ef-card--content__content"> <h4 class="ef-card--content__title">'; 
+	docBody += doctitle; 
+	docBody += '</h4><div class="ef-card--content__text"><p>';
+	docBody += docContent; 
+	docBody += '</p><a href="#" class="ef-card--content__link">Link to page</a> </div> </div></div>';
+	sdk.setContent(docBody);
 	sdk.setData({
-		docContent: docContent,
+		docContent: docBody,
 		doctitle: doctitle
 	});
 }
