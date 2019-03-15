@@ -50,9 +50,9 @@ function paintMap() {
 	console.log(docBody);
 	sdk.setContent(docBody);
 	sdk.setData({
-		docContent: docBody,
+		docContent: docContent,
 		doctitle: doctitle,
-		docContent: imageURL,
+		imageURL: imageURL,
 		linkURL: linkURL,
 		cardType: cardType
 	});
