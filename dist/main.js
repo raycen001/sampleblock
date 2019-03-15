@@ -102,7 +102,7 @@ function paintSettings () {
 function paintMap() {
 	doctitle = document.getElementById('text-input-id-11').value;
 	docContent = document.getElementById('text-input-id-12').value;
-	sdk.setContent('<link rel="stylesheet" href="https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css" crossorigin="anonymous"><div class="ef-card--content"> <a href="#" class="ef-card--content__img" tabindex="-1" style="background-image: url(\'image-url\')"></a>    <div class="ef-card--content__inner">        <div class="ef-card--content__content">            <h4 class="ef-card--content__title">Lorem ipsum dolor sit amet, consetetu.</h4>            <div class="ef-card--content__text"> <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p> <a href="#" class="ef-card--content__link">Link to page</a> </div>  </div></div>');
+	sdk.setContent(docContent);
 	sdk.setData({
 		docContent: docContent,
 		doctitle: doctitle
