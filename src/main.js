@@ -29,7 +29,7 @@ function paintMap() {
 	doctitle = document.getElementById('text-input-id-11').value;
 	docContent = document.getElementById('text-input-id-12').value;
 	docBody = '<link rel="stylesheet" href="https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css" crossorigin="anonymous"><div class="ef-card--content">';
-	docBody += '<div class="ef-card--content"> <a href="#" class="ef-card--content__img" tabindex="-1" ><img border="0" src="https://placeimg.com/640/480/arch/1" /></a>';
+	docBody += '<div class="ef-card--content -outline"> <a href="#" class="ef-card--content__img" tabindex="-1" ><img border="0" src="https://placeimg.com/640/480/arch/1" /></a>';
 	docBody += '<div class="ef-card--content__inner"><div class="ef-card--content__content"> <h4 class="ef-card--content__title">'; 
 	docBody += doctitle; 
 	docBody += '</h4><div class="ef-card--content__text"><p>';
