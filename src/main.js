@@ -36,7 +36,7 @@ function paintMap() {
 	imageURL = document.getElementById('text-input-id-13').value;
 	linkURL = document.getElementById('text-input-id-14').value;
 	cardType = document.getElementById('text-input-id-15').value;
-	docBody = '<html><style type="text/css"> @import url(https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css);</style><div class="ef-card--content {5}"><a href="#" class="ef-card--content__img" tabindex="-1" ><img border="0" src="{3}" /></a><div class="ef-card--content__inner"><div class="ef-card--content__content"><h4 class="ef-card--content__title">{1}</h4><div class="ef-card--content__text"> <p>{2}</p><a href="{4}" class="ef-card--content__link">Link to page</a></div></div></div></div></html>';
+	docBody = '<html><style type="text/css"> @import url(https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css);</style><div class="ef-card--content {5}"><a href="#" class="ef-card--content__img" tabindex="-1" style="background-image: url(\'{3}\')"></a><div class="ef-card--content__inner"><div class="ef-card--content__content"><h4 class="ef-card--content__title">{1}</h4><div class="ef-card--content__text"> <p>{2}</p><a href="{4}" class="ef-card--content__link">Link to page</a></div></div></div></div></html>';
 	docBody = docBody.replace("{1}",doctitle);
 	docBody = docBody.replace("{2}",docContent);
 	docBody = docBody.replace("{3}",imageURL);
