@@ -34,7 +34,7 @@ function paintMap() {
 	docBody += '</h4><div class="ef-card--content__text"><p>';
 	docBody += docContent; 
 	docBody += '</p><a href="#" class="ef-card--content__link">Link to page</a> </div> </div></div>';
-	print(docBody);
+	console.log(docBody);
 	sdk.setContent(docBody);
 	sdk.setData({
 		docContent: docBody,
