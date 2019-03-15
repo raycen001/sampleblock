@@ -72,7 +72,7 @@ __webpack_require__(1);
 var SDK = __webpack_require__(19);
 var sdk = new SDK(null, null, true); // 3rd argument true bypassing https requirement: not prod worthy
 
-var address, width, height, zoom, link, mapsKey;
+var docContent, doctitle,;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -90,59 +90,34 @@ function debounce (func, wait, immediate) {
 }
 
 function paintSettings () {
-	document.getElementById('text-input-id-0').value = mapsKey;
-	document.getElementById('text-input-id-1').value = address;
-	document.getElementById('slider-id-01').value = width;
-	document.getElementById('slider-id-02').value = height;
-	document.getElementById('slider-id-03').value = zoom;
-}
-
-function paintSliderValues () {
-	document.getElementById('slider-id-01-val').innerHTML = document.getElementById('slider-id-01').value;
-	document.getElementById('slider-id-02-val').innerHTML = document.getElementById('slider-id-02').value;
-	document.getElementById('slider-id-03-val').innerHTML = document.getElementById('slider-id-03').value;
+	//document.getElementById('text-input-id-11').value = doctitle;
+	//document.getElementById('text-input-id-12').value = docContent;
+	//document.getElementById('slider-id-01').value = width;
+	//document.getElementById('slider-id-02').value = height;
+	//document.getElementById('slider-id-03').value = zoom;
+	document.getElementById('text-input-id-11').value = doctitle;
+	document.getElementById('text-input-id-12').value = docContent;
 }
 
 function paintMap() {
-	mapsKey = document.getElementById('text-input-id-0').value;
-	address = document.getElementById('text-input-id-1').value;
-	width = document.getElementById('slider-id-01').value;
-	height = document.getElementById('slider-id-02').value;
-	zoom = document.getElementById('slider-id-03').value;
-	link = document.getElementById('text-input-id-2').value;
-	if (!address) {
-		return;
-	}
-	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
-		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
-		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
+	doctitle = document.getElementById('text-input-id-11').value;
+	docContent = document.getElementById('text-input-id-12').value;
 	sdk.setContent('<link rel="stylesheet" href="https://cdn.ef.design/libs/gud-css/0.0.1/css/main.min.css" crossorigin="anonymous"><div class="ef-card--content"> <a href="#" class="ef-card--content__img" tabindex="-1" style="background-image: url(\'image-url\')"></a>    <div class="ef-card--content__inner">        <div class="ef-card--content__content">            <h4 class="ef-card--content__title">Lorem ipsum dolor sit amet, consetetu.</h4>            <div class="ef-card--content__text"> <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p> <a href="#" class="ef-card--content__link">Link to page</a> </div>  </div></div>');
 	sdk.setData({
-		address: address,
-		width: width,
-		height: height,
-		zoom: zoom,
-		link: link,
-		mapsKey: mapsKey
+		docContent: docContent,
+		doctitle: doctitle
 	});
-	localStorage.setItem('googlemapsapikeyforblock', mapsKey);
 }
 
 sdk.getData(function (data) {
-	address = data.address || '';
-	width = data.width || 400;
-	height = data.height || 300;
-	zoom = data.zoom || 15;
-	link = data.link || '';
-	mapsKey = data.mapsKey || localStorage.getItem('googlemapsapikeyforblock');
+	docContent = data.docContent || '';
+	doctitle = data.doctitle || '';
 	paintSettings();
-	paintSliderValues();
 	paintMap();
 });
 
 document.getElementById('workspace').addEventListener("input", function () {
 	debounce(paintMap, 500)();
-	paintSliderValues();
 });
 
 
